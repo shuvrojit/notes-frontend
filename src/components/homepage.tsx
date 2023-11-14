@@ -1,18 +1,13 @@
-import { useLoaderData } from "react-router-dom"
+import ShowNotes from "./notes/ShowNotes";
 
-
-function data () {
-  return useLoaderData()
-}
-
-const Homepage = () => {
-  console.log(data())
+const Homepage = ({ data }) => {
   return (
     <>
-      <p>{data()}</p>
-      nice
+      {data.map((d) => {
+        return <ShowNotes title={d.title} body={d.body} key={d.id} />;
+      })}
     </>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;

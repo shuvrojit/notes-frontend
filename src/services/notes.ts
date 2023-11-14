@@ -1,4 +1,5 @@
+import data from "../../data";
 
 export function loader() {
-  return "homepage/notes"
+  return data;
 }
